@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAkDOwSpmUKgyxeQsvQ2dePkgaMEUuKALA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>637424531884</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dbltecnologia.radiotop</string>
+	<key>PROJECT_ID</key>
+	<string>antoniofilho-ef6a2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>antoniofilho-ef6a2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:637424531884:ios:dc7bb5a4aa74fc0a516209</string>
+	<key>DATABASE_URL</key>
+	<string>https://antoniofilho-ef6a2-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
