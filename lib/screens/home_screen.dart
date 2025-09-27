@@ -232,13 +232,13 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const VideoScreen())),
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(18),
             backgroundColor: Colors.white,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: const [
-              Icon(Icons.live_tv, size: 34, color: Color(0xFFd80c25)),
+              Icon(Icons.live_tv, size: 36, color: Color(0xFFd80c25)),
               Text('Ao vivo', style: TextStyle(fontSize: 11, color: Color(0xFFd80c25))),
             ],
           ),
