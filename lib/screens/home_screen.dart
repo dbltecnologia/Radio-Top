@@ -107,29 +107,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const SizedBox(width: 46), // Spacer for social icons
-                      const Spacer(),
-                      _buildMenuIcon(context),
-                    ],
-                  ),
+                  _buildTopBar(context),
                   Expanded(
-                    child: Row(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        _buildSocialBar(),
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image.asset('assets/images/logo.png', width: screenWidth * 0.45),
-                              _buildRadioInfo(),
-                              _buildControls(),
-                              _buildMicrophoneButton(),
-                            ],
-                          ),
-                        ),
+                        Image.asset('assets/images/logo.png', width: screenWidth * 0.45),
+                        _buildRadioInfo(),
+                        _buildControls(),
+                        _buildMicrophoneButton(),
                       ],
                     ),
                   ),
@@ -140,6 +126,24 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildTopBar(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          children: [
+            _buildSocialIcon(FontAwesomeIcons.tiktok, 'TikTok', 'https://www.tiktok.com/@radiotopfmma', size: 38),
+            const SizedBox(width: 8),
+            _buildSocialIcon(FontAwesomeIcons.facebook, 'Facebook', 'https://web.facebook.com/people/RadioTop-Ipz/pfbid037mqL7tt56XWp1eL5S5vWHufwSCmCepoQE5LoLHEjPiGdBeqvwmVBSFWSnCRydv5kl/', size: 38),
+            const SizedBox(width: 8),
+            _buildSocialIcon(FontAwesomeIcons.youtube, 'YouTube', 'https://youtube.com/@radiotopfmma', size: 38),
+          ],
+        ),
+        _buildMenuIcon(context),
+      ],
     );
   }
 
@@ -158,32 +162,19 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildSocialBar() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _buildSocialIcon(FontAwesomeIcons.tiktok, 'TikTok', 'https://www.tiktok.com/@radiotopfmma'),
-        const SizedBox(height: 16),
-        _buildSocialIcon(FontAwesomeIcons.facebook, 'Facebook', 'https://web.facebook.com/people/RadioTop-Ipz/pfbid037mqL7tt56XWp1eL5S5vWHufwSCmCepoQE5LoLHEjPiGdBeqvwmVBSFWSnCRydv5kl/'),
-        const SizedBox(height: 16),
-        _buildSocialIcon(FontAwesomeIcons.youtube, 'YouTube', 'https://youtube.com/@radiotopfmma'),
-      ],
-    );
-  }
-
-  Widget _buildSocialIcon(IconData icon, String tooltip, String urlString) {
+  Widget _buildSocialIcon(IconData icon, String tooltip, String urlString, {double size = 46}) {
     return Tooltip(
       message: tooltip,
       child: GestureDetector(
         onTap: () => _launchURL(urlString),
         child: Container(
-          width: 46,
-          height: 46,
+          width: size,
+          height: size,
           decoration: BoxDecoration(
             color: Colors.white.withAlpha(40),
             shape: BoxShape.circle,
           ),
-          child: Center(child: FaIcon(icon, color: Colors.white)),
+          child: Center(child: FaIcon(icon, color: Colors.white, size: size * 0.5)),
         ),
       ),
     );
